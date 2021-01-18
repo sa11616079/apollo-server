@@ -25,25 +25,3 @@ export default {
     return deletedId;
   }
 };
-// export default {
-//   createTrainee: (parent, args) => {
-//     const { user } = args;
-//     const addedUser = userInstance.createUser(user);
-//     pubsub.publish(constant.subscriptions.TRAINEE_ADDED, { traineeAdded: addedUser });
-//     return addedUser;
-//   },
-//   updateTrainee: (parent, args) => {
-//     const {
-//       id, role, name, email
-//     } = args;
-//     const updatedUser = userInstance.updateUser(id, role, name, email);
-//     pubsub.publish(constant.subscriptions.TRAINEE_UPDATED, { traineeUpdated: updatedUser });
-//     return updatedUser;
-//   },
-//   deleteTrainee: (parent, args) => {
-//     const { id } = args;
-//     const deletedId = userInstance.deleteUser(id);
-//     pubsub.publish(constant.subscriptions.TRAINEE_ADDED, { traineeDeleted: deletedId });
-//     return deletedId;
-//   }
-// };
