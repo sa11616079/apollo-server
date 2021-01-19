@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/sa11616079/apollo-server#readme",
   "dependencies": {
+    "apollo-datasource-rest": "^0.9.7",
     "apollo-server": "^2.19.2",
     "apollo-server-express": "^2.19.1",
     "connect": "^3.7.0",

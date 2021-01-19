@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
-// /* eslint-disable no-console */
 import Express from 'express';
 import { createServer } from 'http';
 import { ApolloServer } from 'apollo-server-express';
+import UserAPI from './datasource/User.js';
 
 export default class Server {
   constructor(config) {
@@ -31,6 +32,10 @@ export default class Server {
     const { app } = this;
     this.server = new ApolloServer({
       ...schema,
+      dataSources: () => {
+        const userAPI = new UserAPI();
+        return { userAPI };
+      },
       onHealthCheck: () => new Promise((resolve) => {
         resolve('I am Okay...');
       })
