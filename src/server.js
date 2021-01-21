@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
+// /* eslint-disable no-console */
 import Express from 'express';
+import { createServer } from 'http';
 import { ApolloServer } from 'apollo-server-express';
 
 export default class Server {
@@ -19,7 +21,7 @@ export default class Server {
 
   run() {
     const { port, nodeEnv } = this.config;
-    this.app.listen(port, () => {
+    this.httpServer.listen(port, () => {
       console.log(`Server started on port ${port} (${nodeEnv})`);
     });
     return this;
@@ -34,6 +36,8 @@ export default class Server {
       })
     });
     this.server.applyMiddleware({ app });
+    this.httpServer = createServer(app);
+    this.server.installSubscriptionHandlers(this.httpServer);
     this.run();
   }
 }
