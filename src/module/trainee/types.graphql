@@ -1,10 +1,22 @@
 input CreateUserInput {
     name: String!
     email: String!
-    role: String!
+    password: String!
+    role: String
 }
 
 input LoginInput {
     password: String!
     email: String!
+}
+
+input DeleteUserId {
+    originalId: String!
+}
+
+input UpdateUserInput {
+    originalId: String
+    name: String
+    email: String
+    role: String
 }
