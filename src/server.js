@@ -32,12 +32,11 @@ export default class Server {
     const { app } = this;
     this.server = new ApolloServer({
       ...schema,
-      dataSources: () => {
-        const userAPI = new UserAPI();
-        const traineeAPI = new TraineeAPI();
-        // console.log('traineeAPI ', traineeAPI);
-        return { userAPI, traineeAPI };
-      },
+      dataSources: () => ({
+        userAPI: new UserAPI(),
+        traineeAPI: new TraineeAPI()
+      }),
+
       context: ({ req }) => {
         if (req) {
           return { token: req.headers.authorization };

@@ -7,3 +7,21 @@ type User {
     password: String
     createdAt: String
 }
+
+type AllTrainees {
+status: String
+message: String
+TotalCount: String
+TraineeCount: String
+records: [Detail]
+}
+
+type Detail{
+_id: String
+originalId: String
+name: String
+email: String
+role: String
+password: String
+createdAt: String
+}

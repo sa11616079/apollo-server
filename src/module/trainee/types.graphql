@@ -1,17 +1,17 @@
 input CreateUserInput {
-    name: String!
-    email: String!
-    password: String!
+    name: String
+    email: String
+    password: String
     role: String
 }
 
 input LoginInput {
-    password: String!
-    email: String!
+    password: String
+    email: String
 }
 
 input DeleteUserId {
-    originalId: String!
+    originalId: String
 }
 
 input UpdateUserInput {
@@ -19,4 +19,9 @@ input UpdateUserInput {
     name: String
     email: String
     role: String
+}
+
+input AllTraineesInput {
+    skip: Int
+    limit: Int
 }
