@@ -34,9 +34,6 @@ export default {
   deleteTrainee: async (parent, args, context) => {
     const { dataSources: { traineeAPI } } = context;
     const { payload: { originalId } } = args;
-    // const data = {
-    //   originalId
-    // };
     const response = await traineeAPI.deleteTrainee(originalId);
     const deletedTrainee = JSON.stringify(response);
     console.log('trainee deleted : ', response);
