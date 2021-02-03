@@ -25,3 +25,19 @@ role: String
 password: String
 createdAt: String
 }
+
+type Subcript {
+    status: String
+    message: String
+    data: updateRecord
+}
+
+type updateRecord {
+    id: String
+    originalId: String
+    name: String
+    email: String
+    role: String
+    password: String
+    createdAt: String
+}
