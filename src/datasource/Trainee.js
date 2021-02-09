@@ -12,8 +12,8 @@ class TraineeAPI extends RESTDataSource {
     request.headers.set('Authorization', this.context.token);
   }
 
-  getAllTrainee() {
-    return this.get('/getall?skip=0&limit=10');
+  getAllTrainee({ skip, limit }) {
+    return this.get('/getall', { skip, limit });
   }
 
   createTrainee(data) {
@@ -24,8 +24,8 @@ class TraineeAPI extends RESTDataSource {
     return this.put('/update', data);
   }
 
-  deleteTrainee(id) {
-    return this.delete(`/delete?id=${id}`);
+  deleteTrainee(originalId) {
+    return this.delete(`/delete?originalId=${originalId}`);
   }
 }
 
